@@ -40,8 +40,10 @@ public class JaiBhavaniToursAndTravelsUserDetailsService implements UserDetailsS
 		{
 			throw new UsernameNotFoundException("User Detail Not Found For The User : " + email);
 		}
-		
+
+
 		List<GrantedAuthority> authorityList = List.of(new SimpleGrantedAuthority(applicationUser.getRole().getRoleName()));
+		List<GrantedAuthority> authorityList1 = List.of(new SimpleGrantedAuthority(applicationUser.getRole().getName()));
 		
 		User userDetails = new User(applicationUser.getUserName(),applicationUser.getPassword(),authorityList);
 		

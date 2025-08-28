@@ -21,8 +21,8 @@ public class RolesController {
     @Autowired
     private IRolesService rolesService;
 
-    @GetMapping("/{roleName}")
-    public RolesDto getRoleByName(@PathVariable String roleName) {
-        return rolesService.findByRoleName(roleName);
-    }
+//    @GetMapping("/{roleName}")
+//    public RolesDto getRoleByName(@PathVariable String roleName) {
+//        return rolesService.findByRoleName(roleName);
+//    }
 }

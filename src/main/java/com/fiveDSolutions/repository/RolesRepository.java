@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
+
 /**
  * File Name: RolesRepository.java
  * Entity: RolesRepository
@@ -18,5 +19,7 @@ import java.util.Optional;
 @Repository
 public interface RolesRepository extends JpaRepository<Roles, Long>
 {
-	Optional<Roles> findByRoleName(String name);
+
+//	Roles findByRolesName(String student);
+//	Roles findByRoleName(String roleName);
 }

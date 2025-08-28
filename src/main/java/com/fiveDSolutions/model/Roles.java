@@ -12,13 +12,14 @@ import lombok.Setter;
 public class Roles extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-   
     private Long roleId;
 
     @Size(max = 50)
     @NotNull
     @Column(name = "role_name", nullable = false, length = 50)
     private String roleName;
+    @Column(name = "name", nullable = false, length = 50)
+    private String name;
 
     
 

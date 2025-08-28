@@ -44,4 +44,5 @@ public class ApplicationUsersDto extends BaseEntity
 
 	public ApplicationUsersDto(Long applicationUserId, String userName, String email, String mobileNumber, Roles role) {
 	}
+
 }

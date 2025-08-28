@@ -13,5 +13,6 @@ import com.fiveDSolutions.dto.RolesDto;
 
 public interface IRolesService
 {
-	public RolesDto findByRoleName(String name);
+//	public RolesDto findByRoleName(String name);
+//	public RolesDto getRolesByName(String rolesName);
 }
