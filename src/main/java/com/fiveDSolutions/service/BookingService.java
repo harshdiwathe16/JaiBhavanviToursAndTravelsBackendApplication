@@ -5,14 +5,21 @@ import com.fiveDSolutions.enums.BookingStatus;
 
 import java.util.List;
 
-public interface BookingService {
+public interface BookingService
+{
     BookingDto createBooking(BookingDto dto);
+
     BookingDto updateBooking(Long bookingId, BookingDto dto);
+
     void cancelBooking(Long bookingId);
+
     BookingDto getBookingById(Long bookingId);
+
     List<BookingDto> getAllBookings();
 
     // Extra features
-    List<BookingDto> getBookingsByCustomer(Long customerId);
+
+    List<BookingDto> getBookingsByUsername(String Username);
+
     List<BookingDto> getBookingsByStatus(BookingStatus status);
 }

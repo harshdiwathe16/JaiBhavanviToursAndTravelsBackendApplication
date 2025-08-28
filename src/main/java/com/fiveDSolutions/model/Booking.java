@@ -28,6 +28,7 @@ public class Booking {
     private TourPackage tourPackage;
 
     private LocalDate bookingDate;
+
     private LocalDate travelDate;
 
     @Enumerated(EnumType.STRING)

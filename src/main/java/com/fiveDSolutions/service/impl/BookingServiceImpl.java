@@ -78,18 +78,10 @@ public class BookingServiceImpl implements BookingService {
     }
 
     @Override
-    public List<BookingDto> getBookingsByCustomer(Long customerId) {
-        Optional<ApplicationUsers> optionalUser = usersRepository.findById(customerId);
-        if (!optionalUser.isPresent()) {
-            throw new RuntimeException("User not found");
-        }
-        List<Booking> bookings = bookingRepository.findByCustomer(optionalUser.get());
-        List<BookingDto> dtos = new ArrayList<>();
-        for (Booking booking : bookings) {
-            dtos.add(mapToDto(booking));
-        }
-        return dtos;
+    public List<BookingDto> getBookingsByUsername(String Username) {
+        return List.of();
     }
+
 
     @Override
     public List<BookingDto> getBookingsByStatus(BookingStatus status) {
