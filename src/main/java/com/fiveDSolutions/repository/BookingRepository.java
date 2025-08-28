@@ -7,9 +7,13 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface BookingRepository extends JpaRepository<Booking, Long> {
-    List<Booking> findByUsername(ApplicationUsers username);
-    List<Booking> findByStatus(BookingStatus status);
+    // Correct way: find bookings by user entity
+    List<Booking> findByUser(ApplicationUsers user);
+
+    // OR if you want by email directly:
+    List<Booking> findByUser_Email(String email);
 }

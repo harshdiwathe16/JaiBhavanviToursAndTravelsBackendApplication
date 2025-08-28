@@ -8,6 +8,8 @@ import java.util.List;
 
 @Repository
 public interface TourPackageRepository extends JpaRepository<TourPackage, Long> {
-    List<TourPackage> findByDestination(String destination);
-    List<TourPackage> findByPackageNameContainingIgnoreCase(String keyword);
+    List<TourPackage> findByDestinationContainingIgnoreCase(String destination);
+
+    List<TourPackage> findByPackageNameContainingIgnoreCaseOrDescriptionContainingIgnoreCase(
+            String name, String description);
 }

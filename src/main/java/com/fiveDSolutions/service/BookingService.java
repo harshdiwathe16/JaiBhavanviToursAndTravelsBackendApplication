@@ -20,6 +20,4 @@ public interface BookingService
     // Extra features
 
     List<BookingDto> getBookingsByUsername(String Username);
-
-    List<BookingDto> getBookingsByStatus(BookingStatus status);
 }

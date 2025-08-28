@@ -74,4 +74,16 @@ public class BookingController {
 
         return ResponseEntity.ok(response);
     }
+
+    // GET by username
+    @GetMapping("/user/{username}")
+    public ResponseEntity<ApiResponseDto<List<BookingDto>>> getBookingsByUsername(@PathVariable("username") String username) {
+        List<BookingDto> list = bookingService.getBookingsByUsername(username);
+
+        ApiResponseDto<List<BookingDto>> response = new ApiResponseDto<>();
+        response.setStatus(EOperationStatus.RESULT_SUCCESS);
+        response.setData(list);
+
+        return ResponseEntity.ok(response);
+    }
 }

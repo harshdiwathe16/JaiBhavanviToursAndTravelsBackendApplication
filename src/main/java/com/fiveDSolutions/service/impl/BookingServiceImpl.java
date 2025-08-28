@@ -77,21 +77,23 @@ public class BookingServiceImpl implements BookingService {
         return dtos;
     }
 
-    @Override
-    public List<BookingDto> getBookingsByUsername(String Username) {
-        return List.of();
-    }
+    public List<BookingDto> getBookingsByUsername(String username) {
+        List<Booking> bookings = bookingRepository.findByUser_Email(username);
 
-
-    @Override
-    public List<BookingDto> getBookingsByStatus(BookingStatus status) {
-        List<Booking> bookings = bookingRepository.findByStatus(status);
-        List<BookingDto> dtos = new ArrayList<>();
+        List<BookingDto> dtoList = new ArrayList<>();
         for (Booking booking : bookings) {
-            dtos.add(mapToDto(booking));
+            BookingDto dto = new BookingDto();
+            dto.setBookingId(booking.getBookingId());
+            dto.setBookingDate(booking.getBookingDate());
+//            dto.setTotalAmount(booking.getTotalAmount());
+//            dto.setUsername(booking.getUser().getEmail());
+            dtoList.add(dto);
         }
-        return dtos;
+        return dtoList;
     }
+
+
+
 
     private BookingDto mapToDto(Booking booking) {
         return new BookingDto(

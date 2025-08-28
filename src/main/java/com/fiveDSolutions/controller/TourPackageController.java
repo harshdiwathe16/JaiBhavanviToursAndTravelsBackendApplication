@@ -5,6 +5,7 @@ import com.fiveDSolutions.dto.TourPackageDto;
 import com.fiveDSolutions.constants.EOperationStatus;
 import com.fiveDSolutions.service.TourPackageService;
 
+import com.fiveDSolutions.service.impl.ToursPackageServiceImpl;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +18,7 @@ import java.util.List;
 public class TourPackageController {
 
     @Autowired
-    private TourPackageService packageService;
+    ToursPackageServiceImpl packageService;
 
 //    POST http://localhost:8080/api/packages
     @PostMapping
